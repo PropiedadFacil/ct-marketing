@@ -24,7 +24,7 @@
           <div class="clearfix">
             <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Ingresa tu mail" %>
             <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña" %>
-            <input autocomplete="off" class="form-control hidden" id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirma contraseña" type="password">
+            <input autocomplete="off" class="hidden" id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirma contraseña" type="password">
             <%= f.submit "Ingresar", class: "btn btn-primary btn-wide" %>
           </div>
         </form>
