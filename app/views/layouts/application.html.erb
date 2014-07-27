@@ -9,12 +9,19 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+  <%= render 'layouts/messages' %>
+   <div class="page-wrapper">
+
+   <% if current_page?(root_path) %>
+  <%= render 'layouts/header6' %>
+  <% else %>
+  <%= render 'layouts/header8' %>
+  <% end %>
+
+     <%= yield %>
+    <footer class="footer-3">
+    <%= render 'layouts/footer' %>
+    </footer>
+   </div>
   </body>
 </html>

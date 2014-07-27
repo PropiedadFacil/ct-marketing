@@ -1,13 +1,39 @@
-<h3>Welcome</h3>
-<% if user_signed_in? %>
-  <% if current_user.admin? %>
-    <h3>Admin</h3>
-    <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
-  <% else %>
-    <h3>You've signed up. Download a free book.</h3>
-    <%= link_to 'Download PDF', products_path('product.pdf'), :class => 'btn btn-success btn-large' %>
-  <% end %>
-<% else %>
-  <h3>Sign up and download a free book.</h3>
-  <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btn-primary btn-large' %>
-<% end %>
+<main>    
+<!-- header-6 -->
+<section class="header-6-sub">
+<div class="background">&nbsp;</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    <h3>Solo 2 días...</h3>
+    <%= image_tag('card-hidden.png', width: 232.5, height:154.5) %>
+    <br>
+      <div class="row">
+        <p class="lead col-sm-10 col-sm-offset-1">
+         Regístrate y te enviaremos un mail con tu código VIP de descuento para usarlo exclusivamente en nuestro shop.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+
+      <div class="signup-form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <form>
+          <div class="clearfix">
+            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Ingresa tu mail" %>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirma contraseña" %>
+            <%= f.submit "Ingresar", class: "btn btn-primary btn-wide" %>
+          </div>
+        </form>
+        <% end %>
+      </div>
+      <br>
+      <p><%= link_to '¿Ya tienes cuenta?', new_user_session_path %></p>
+    </div>
+  </div>
+</div>
+</section>
+</main>

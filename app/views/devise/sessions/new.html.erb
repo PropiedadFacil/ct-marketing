@@ -1,26 +1,50 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%- if devise_mapping.registerable? %>
-        <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right'  %>
-      <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-      <%= f.submit 'Sign in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox">
-          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+
+<section class="blog-2">
+    <div class="background hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div><%= image_tag('mag.jpg') %></div>
+                </div>
+            </div>
         </div>
-      <% end -%>
-  <% end %>
-</div>
+    </div>
+    <div class="container">
+    <main>	
+        <div class="row">
+		  <div class="col-sm-7 col-sm-offset-4">
+	        <div class="promo">
+                <h4>Que bueno tenerte por aquí de nuevo!</h4>
+                <p>Ingresa para conocer los últimos descuentos que tenemos.</p>
+            </div>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h5 class="panel-title">Ingresar</h5>
+			  </div>
+		      <div class="panel-body">
+		        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<form role="form">
+				  <div class="form-group">
+				    <%= f.label :email %>
+				    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+				  </div>
+				  <div class="form-group">
+				    <%= f.label :Contraseña %>
+				    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+				  </div>
+				  <% if devise_mapping.rememberable? -%>
+				    <div><%= f.check_box :remember_me %> <%= f.label :Recordarme %></div>
+				  <% end -%>
+				  <%= f.submit "Ingresar", class: "btn btn-primary" %>
+				</form>
+			  </div>
+			  <div class="panel-footer"><%= render "devise/shared/links" %></div>
+			</div>
+			<% end %>
+		  </div>
+		</div>
+	</main>	
+    </div>
+</section>
+
+
