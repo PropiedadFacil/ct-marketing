@@ -1,12 +1,58 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<section class="blog-2">
+    <div class="background hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                	<!-- #####CORRECT THIS EMBEDDED CSS TO A MORE DECENT WAY, MEANWHILE WORKS -->
+                    <div style="height:85% margin-bottom: -50px"><%= image_tag('gum.jpg') %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <main>	
+        <div class="row">
+		  <div class="col-sm-7 col-sm-offset-4">
+	        <div class="promo">
+                <h4>Ovidaste tu contraseña? No hay problema!</h4>
+                <p>Ingresa el email con el que te registraste y te ayudaremos a recuperarla</p>
+            </div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+			<div class="panel panel-default">
+			  <!-- <div class="panel-heading">
+			    <h5 class="panel-title">Ingresa tu email aqui, rapido</h5>
+			  </div> -->
+			  <div class="panel-body">
+					<h6>Recuperar tu clave es un proceso rapido y seguro</h6>
 
-<%= render "devise/shared/links" %>
+					<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+					  <%= devise_error_messages! %>
+
+					  <div><%= f.label :email %><br />
+					  <%= f.email_field :email, autofocus: true, class: "form-control" %></div>
+
+					  <div><%= f.submit "Send me reset password instructions", class: "btn btn-primary" %></div>
+					<% end %>
+</div>
+					<div class="panel-footer"><%= link_to("Volver", root_path) %></div>
+
+		  		
+			</div>
+
+		</div>
+
+	</main>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
