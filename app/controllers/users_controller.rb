@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized 
-  # after_action :after_sign_path
+
   def index
     @users = User.all
     authorize User
-    # after_sign_path
+
   end
 
   def show

@@ -8,7 +8,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Ctmarketing"
+  config.site_title = "Club Tacones"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -28,7 +28,7 @@ ActiveAdmin.setup do |config|
   # will be added to.
   #
   # eg:
-  #   config.default_namespace = :hello_world
+    # config.default_namespace = :hello_world
   #
   # This will create resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
@@ -113,7 +113,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'users#index'
 
 
   # == Admin Comments
@@ -121,10 +121,10 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.allow_comments = false
+  config.allow_comments = false
   #
   # You can disable the menu item for the comments index page:
-  # config.show_comments_in_menu = false
+  config.show_comments_in_menu = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -242,5 +242,9 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+
+
+  
+
 
 end

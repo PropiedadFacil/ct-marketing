@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :giftcards
+
+  get '/admin', to: 'admin#after_sign_in_path_for' 
 end
